@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import './Main.scss';
+import { Setting } from "../../../Components/Setting";
 
 export class Main extends Component {
   render() {
@@ -12,6 +13,7 @@ export class Main extends Component {
             <span className="heading-primary--sub">
               A Radio station for your team
             </span>
+            <Setting/>
           </h1>
         </div>
       </header>
