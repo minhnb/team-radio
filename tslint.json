@@ -16,6 +16,7 @@
     "variable-name": false,
     "object-literal-sort-keys": false,
     "import-name": false,
+    "no-var-requires": false,
     "jsx-closing-bracket-location": [1, "after-props"],
     "no-console": ["warn"]
   }

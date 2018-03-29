@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Component } from 'react';
-import './LoadingIndicator.scss';
+const styles = require('./LoadingIndicator.scss');
+// TODO: remove this line
+console.log(styles);
 
 export class LoadingIndicator extends Component {
   constructor(props: any) {
@@ -8,6 +10,6 @@ export class LoadingIndicator extends Component {
   }
 
   public render() {
-    return <div className="loader" />;
+    return <div className={styles.loader} />;
   }
 }
