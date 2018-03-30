@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { Component } from 'react';
-const styles = require('./LoadingIndicator.scss');
-// TODO: remove this line
-console.log(styles);
+import * as CSSModules from 'react-css-modules';
 
+@CSSModules(require('./LoadingIndicator.scss'))
 export class LoadingIndicator extends Component {
   constructor(props: any) {
     super(props);
   }
 
   public render() {
-    return <div className={styles.loader} />;
+    return <div styleName="loader" />;
   }
 }

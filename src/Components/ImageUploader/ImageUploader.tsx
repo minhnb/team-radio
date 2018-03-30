@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { Component } from 'react';
 import Cropper from 'react-cropper';
+import * as CSSModules from 'react-css-modules';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import toBase64 from 'Utilities/toBase64';
 import './ImageUploader.scss';
 
 // TODO: solve this tslint problem in class property (public, private)
+@CSSModules(require('./ImageUploader.scss'))
 export class ImageUploader extends Component<any, any> {
   private inputFileTag: any;
 
@@ -109,7 +111,7 @@ export class ImageUploader extends Component<any, any> {
   public render() {
     const { aspectRatio } = this.props;
     return (
-      <div className="image-uploader">
+      <div styleName="root">
         <input
           type="file"
           ref={ref => {
@@ -117,13 +119,14 @@ export class ImageUploader extends Component<any, any> {
           }}
           accept="image/*"
           onChange={this.convertImageUploaded}
+          styleName="input"
         />
         <div>
           <Modal
             isOpen={this.state.isOpenCropModal}
             toggle={this.setAllValueToDefault}>
             <ModalHeader>Crop your photo</ModalHeader>
-            <ModalBody className="cropper-modal-body">
+            <ModalBody styleName="modal-body">
               <Cropper
                 // tslint:disable-next-line
                 ref="cropper"
@@ -131,11 +134,11 @@ export class ImageUploader extends Component<any, any> {
                 aspectRatio={aspectRatio}
                 guides={false}
                 crop={this.cropImage}
-                className="copper"
+                styleName="copper"
               />
             </ModalBody>
             <ModalFooter>
-              <div className="cropper-modal-footer">
+              <div styleName="modal-footer">
                 <Button color="primary" onClick={this.uploadImageToServer}>
                   Apply
                 </Button>

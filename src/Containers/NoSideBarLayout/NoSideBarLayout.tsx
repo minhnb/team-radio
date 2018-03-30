@@ -11,16 +11,18 @@ import {
 } from 'Pages';
 import * as React from 'react';
 import { Component } from 'react';
+import * as CSSModules from 'react-css-modules';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './NoSideBarLayout.scss';
 
+@CSSModules(require('./NoSideBarLayout.scss'))
 export class NoSideBarLayout extends Component {
   public render() {
     return (
-      <div className="app no-side-bar">
+      <div styleName="root" className="app">
         <CustomHeader />
         <div className="app-body">
-          <main className="main">
+          <main styleName="main" className="main">
             <Switch>
               <Route exact path="/" name="Home" component={Home} />
               <Route path="/login" name="Login" component={Login} />

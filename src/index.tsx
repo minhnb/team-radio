@@ -2,17 +2,22 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// Styles
+/**
+ * Css icon fonts
+ */
 // Import Flag Icons Set
 import 'flag-icon-css/css/flag-icon.min.css';
 // Import Font Awesome Icons Set
 import 'font-awesome/css/font-awesome.min.css';
 // Import Simple Line Icons Set
 import 'simple-line-icons/css/simple-line-icons.css';
+/**
+ * Global scss modules
+ */
 // Temp fix for reactstrap
-import '../scss/core/_dropdown-menu-right.scss';
+import '../scss/core/_dropdown-menu-right.scss?raw';
 // Import Main styles for this application
-import '../scss/style.scss';
+import '../scss/style.scss?raw';
 
 // config redux
 import 'Configuration';

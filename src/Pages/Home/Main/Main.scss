@@ -17,50 +17,41 @@ $font-title: 'Pacifico', sans-serif;
   background-size: cover;
   background-position: top;
   position: relative;
-  &__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    margin-top: 5rem;
-  }
-  &__create-box {
-    position: absolute;
-    transform: translate(-50%, -50%); // top: 50%;
-    left: 50%;
-    font-size: 18px;
-    width: 100%;
-  }
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 5rem;
+}
+.create-box {
+  position: absolute;
+  transform: translate(-50%, -50%); // top: 50%;
+  left: 50%;
+  font-size: 18px;
+  width: 100%;
 }
 
 .heading-primary {
   color: #ffffff;
   margin-bottom: 7rem;
   backface-visibility: hidden; // fix animation a little move on top
-  &--main {
+  .main {
     display: block;
     font-size: 7rem;
     font-family: $font-title;
     animation: moveInLeft 1s ease-out;
   }
-  &--sub {
+  .sub {
     display: block;
     font-size: 2.5rem;
     font-weight: 200;
-    font-family: 'Roboto Slab', serif;
     animation: moveInRight 1s ease-out;
     margin-top: 1.5rem;
   }
-}
-
-.input--main {
-  padding: 12px 24px;
-  font-size: 18px;
-  background: 0 0;
-  border: 1px solid #fff;
-  color: #fff;
-  transition: all 0.3s;
 }
 
 @mixin placeholder {
@@ -103,7 +94,7 @@ $font-title: 'Pacifico', sans-serif;
   }
 }
 
-.input--fa {
+.icon {
   position: absolute;
   left: auto;
   top: 30%;

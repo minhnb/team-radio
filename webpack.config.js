@@ -106,29 +106,57 @@ module.exports = (env = {}) => {
           })
         },
         {
-          test: /\.(scss)$/,
-          use: ['css-hot-loader'].concat(extractSCSS.extract({
-            fallback: 'style-loader',
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  modules: true,
-                  sourceMap: true,
-                  importLoaders: 1,
-                  localIdentName: '[name]_[local]',
-                  alias: { '../img': '../public/img' },
-                },
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: true,
-                  outputStyle: 'expanded',
-                }
-              }
-            ]
-          }))
+          // Choose whether to use raw scss or modular scss
+          oneOf: [
+            {
+              test: /\.(scss)$/,
+              resourceQuery: /^\?raw$/,
+              use: ['css-hot-loader'].concat(extractSCSS.extract({
+                fallback: 'style-loader',
+                use: [
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      sourceMap: true,
+                      alias: { '../img': '../public/img' },
+                    },
+                  },
+                  {
+                    loader: 'sass-loader',
+                    options: {
+                      sourceMap: true,
+                      outputStyle: 'expanded',
+                    }
+                  }
+                ]
+              }))
+            },
+            {
+              test: /\.(scss)$/,
+              use: ['css-hot-loader'].concat(extractSCSS.extract({
+                fallback: 'style-loader',
+                use: [
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      modules: true,
+                      sourceMap: true,
+                      importLoaders: 1,
+                      localIdentName: '[name]_[local]',
+                      alias: { '../img': '../public/img' },
+                    },
+                  },
+                  {
+                    loader: 'sass-loader',
+                    options: {
+                      sourceMap: true,
+                      outputStyle: 'expanded',
+                    }
+                  }
+                ]
+              }))
+            },
+          ],
         },
       ],
     },
