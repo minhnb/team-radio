@@ -5,7 +5,7 @@ import { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import './Station.scss';
 
-import { NowPlaying, PlaylistTabs, StationSharing } from 'Modules/Station';
+import { ConfigurationButton, NowPlaying, PlaylistTabs, StationSharing } from 'Modules/Station';
 
 const buttonActions = {
   muted: {
@@ -78,6 +78,7 @@ export class Station extends Component<IProps, IState> {
             this._onLightClick,
           )}
           <StationSharing />
+          <ConfigurationButton />
         </div>
       </Row>
     );
