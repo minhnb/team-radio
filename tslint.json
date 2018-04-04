@@ -1,12 +1,12 @@
 {
   "extends": [
-    "tslint:latest",
-    "tslint-config-airbnb",
+    "tslint:recommended",
     "tslint-react",
     "tslint-config-prettier"
   ],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
-    // override tslint-react rules here
+    "prettier": true,
     "jsx-wrap-multiline": false,
     "no-duplicate-imports": false,
     "no-submodule-imports": false,
