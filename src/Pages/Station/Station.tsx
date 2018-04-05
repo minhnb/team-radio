@@ -65,6 +65,12 @@ export class Station extends Component<IProps, IState> {
               <AddSong />
             </div>
           </Col>
+          <Col xs={12}>
+            <div className="chat-box-container">
+              <h1>Chat Box</h1>
+              <ChatBox />
+            </div>
+          </Col>
         </Row>
       </Container>
     );
