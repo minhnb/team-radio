@@ -5,7 +5,7 @@ import { Component } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import './Station.scss';
 
-import { NowPlaying, PlaylistTabs, StationHeader } from 'Modules/Station';
+import { ChatBox, NowPlaying, PlaylistTabs, StationHeader } from 'Modules/Station';
 
 interface IProps {} // tslint:disable-line
 
